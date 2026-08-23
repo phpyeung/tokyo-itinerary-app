@@ -1,15 +1,18 @@
 import {
   CalendarDays,
+  Clock,
   ExternalLink,
   MapPin,
   Plane,
   Search,
   Sparkles,
   Star,
+  Ticket,
   Utensils,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { itinerary, ReservationStatus, statusOrder } from "./itinerary";
+import { attractionsByDate, restaurantSuggestionSets } from "./tripAdditions";
 
 const allStatuses = "All" as const;
 type StatusFilter = ReservationStatus | typeof allStatuses;
@@ -57,12 +60,21 @@ export function App() {
       .map((day) => ({
         ...day,
         items: filteredItems.filter((item) => item.date === day.date),
+        attractions: attractionsByDate[day.date] ?? [],
+        suggestions: restaurantSuggestionSets.filter((set) => set.date === day.date),
       }))
       .filter((group) => group.items.length > 0);
   }, [days, filteredItems]);
 
   const reserveCount = itinerary.filter((item) => item.status === "Reserve").length;
-  const flexibleCount = itinerary.filter((item) => item.status === "Flexible").length;
+  const attractionCount = Object.values(attractionsByDate).reduce(
+    (count, attractions) => count + attractions.length,
+    0,
+  );
+  const suggestionCount = restaurantSuggestionSets.reduce(
+    (count, set) => count + set.options.length,
+    0,
+  );
 
   return (
     <main>
@@ -75,8 +87,8 @@ export function App() {
           </p>
           <h1 id="page-title">Tokyo Itinerary</h1>
           <p className="hero__copy">
-            A reservation-first dining map for Ginza ramen, Ebisu sushi, Disneyland
-            meals, and flexible neighborhood lunches.
+            A day-by-day Tokyo plan with tourist stops, existing meal picks, and
+            family-friendly restaurant backups around each neighborhood.
           </p>
           <div className="hero__stats" aria-label="Trip summary">
             <span>
@@ -84,8 +96,12 @@ export function App() {
               {days.length} days
             </span>
             <span>
+              <MapPin size={18} />
+              {attractionCount} stops
+            </span>
+            <span>
               <Utensils size={18} />
-              {itinerary.length} meals
+              {itinerary.length} primary meals
             </span>
             <span>
               <Sparkles size={18} />
@@ -93,7 +109,7 @@ export function App() {
             </span>
             <span>
               <Search size={18} />
-              {flexibleCount} open slots
+              {suggestionCount} backups
             </span>
           </div>
         </div>
@@ -139,50 +155,132 @@ export function App() {
         </div>
       </section>
 
-      <section className="timeline" aria-label="Meal itinerary">
+      <section className="timeline" aria-label="Trip itinerary">
         {groupedItems.map((group) => (
           <article className="day-section" key={group.date}>
             <header className="day-header">
               <p>{group.items[0].weekday}</p>
               <h2>{formatDisplayDate(group.date)}</h2>
             </header>
-            <div className="meal-grid">
-              {group.items.map((item) => (
-                <section className="meal-card" key={item.id}>
-                  <div className="meal-card__topline">
-                    <span className="meal-type">{item.meal}</span>
-                    <span className={`status-chip ${statusTone[item.status]}`}>
-                      {item.status}
-                    </span>
-                  </div>
-                  <div className="meal-card__title-row">
-                    <h3>{item.restaurant}</h3>
-                    {item.featured ? (
-                      <span className="featured" aria-label="Starred pick">
-                        <Star size={16} fill="currentColor" />
+            <div className="day-content">
+              <section className="attraction-panel" aria-label={`${group.label} tourist stops`}>
+                <div className="panel-heading">
+                  <h3>
+                    <MapPin size={17} />
+                    Places to visit
+                  </h3>
+                  <strong>{group.attractions.length} stops</strong>
+                </div>
+                <div className="attraction-list">
+                  {group.attractions.map((attraction) => (
+                    <article className="attraction-item" key={`${group.date}-${attraction.title}`}>
+                      <div className="attraction-time">
+                        <Clock size={15} />
+                        {attraction.time}
+                      </div>
+                      <div>
+                        <div className="attraction-title-row">
+                          {attraction.href ? (
+                            <a href={attraction.href} target="_blank" rel="noreferrer">
+                              {attraction.title}
+                              <ExternalLink size={14} />
+                            </a>
+                          ) : (
+                            <h3>{attraction.title}</h3>
+                          )}
+                          {attraction.booking ? (
+                            <span className="booking-chip">{attraction.booking}</span>
+                          ) : null}
+                        </div>
+                        <p className="attraction-area">{attraction.area}</p>
+                        <p>{attraction.note}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+
+              <div className="meal-grid">
+                {group.items.map((item) => (
+                  <section className="meal-card" key={item.id}>
+                    <div className="meal-card__topline">
+                      <span className="meal-type">Primary {item.meal}</span>
+                      <span className={`status-chip ${statusTone[item.status]}`}>
+                        {item.status}
                       </span>
-                    ) : null}
-                  </div>
-                  <p className="meal-area">
-                    <MapPin size={16} />
-                    {item.area}
-                  </p>
-                  <p className="meal-note">{item.note}</p>
-                  {item.detail ? <p className="meal-detail">{item.detail}</p> : null}
-                  <div className="link-row">
-                    {item.links.length > 0 ? (
-                      item.links.map((link) => (
-                        <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                          {link.label}
-                          <ExternalLink size={15} />
-                        </a>
-                      ))
-                    ) : (
-                      <span className="empty-link">No booking link</span>
-                    )}
-                  </div>
-                </section>
-              ))}
+                    </div>
+                    <div className="meal-card__title-row">
+                      <h3>{item.restaurant}</h3>
+                      {item.featured ? (
+                        <span className="featured" aria-label="Starred pick">
+                          <Star size={16} fill="currentColor" />
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="meal-area">
+                      <MapPin size={16} />
+                      {item.area}
+                    </p>
+                    <p className="meal-note">{item.note}</p>
+                    {item.detail ? <p className="meal-detail">{item.detail}</p> : null}
+                    <div className="link-row">
+                      {item.links.length > 0 ? (
+                        item.links.map((link) => (
+                          <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                            {link.label}
+                            <ExternalLink size={15} />
+                          </a>
+                        ))
+                      ) : (
+                        <span className="empty-link">No booking link</span>
+                      )}
+                    </div>
+                  </section>
+                ))}
+              </div>
+
+              <section className="suggestion-panel" aria-label={`${group.label} restaurant suggestions`}>
+                <div className="panel-heading">
+                  <h3>
+                    <Utensils size={17} />
+                    Restaurant backups
+                  </h3>
+                  <strong>3 per lunch and dinner</strong>
+                </div>
+                <div className="suggestion-grid">
+                  {group.suggestions.map((set) => (
+                    <article className="suggestion-set" key={`${set.date}-${set.meal}`}>
+                      <div className="suggestion-set__header">
+                        <span>{set.meal}</span>
+                        <p>{set.context}</p>
+                      </div>
+                      <div className="suggestion-options">
+                        {set.options.map((option) => (
+                          <a
+                            className="suggestion-option"
+                            key={`${set.date}-${set.meal}-${option.name}`}
+                            href={option.href}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <div className="suggestion-option__topline">
+                              <strong>{option.name}</strong>
+                              <ExternalLink size={14} />
+                            </div>
+                            <span className={option.exception ? "score-chip score-chip--exception" : "score-chip"}>
+                              {option.exception ? <Ticket size={13} /> : <Star size={13} fill="currentColor" />}
+                              {option.scoreLabel}
+                            </span>
+                            <p>{option.area}</p>
+                            <p>{option.familyNote}</p>
+                            <em>{option.reason}</em>
+                          </a>
+                        ))}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
             </div>
           </article>
         ))}
