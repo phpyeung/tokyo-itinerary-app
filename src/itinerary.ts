@@ -249,11 +249,23 @@ export const itinerary: ItineraryItem[] = [
     weekday: "Thu",
     dayLabel: "Sep 3",
     meal: "Lunch",
-    restaurant: "Omotesando Japanese/unagi",
-    area: "Omotesando",
-    status: "Flexible",
-    note: "Specific restaurant not selected yet",
-    links: [],
+    restaurant: "日本橋海鮮丼 つじ半 アークヒルズ店",
+    area: "Ark Hills · Roppongi-itchome",
+    status: "Walk-in",
+    featured: true,
+    note: "Walk-in only",
+    detail:
+      "Convenient before YAKITORI Moe dinner in the Azabu/Roppongi area. Reservations are not accepted; Ark Mori Building 3F, 20 seats.",
+    links: [
+      {
+        label: "Ark Hills",
+        href: "https://www.arkhills.com/gourmet_shops/0077.html",
+      },
+      {
+        label: "Tabelog",
+        href: "https://tabelog.com/en/tokyo/A1307/A130701/13219778/",
+      },
+    ],
   },
   {
     id: "2026-09-03-dinner",
