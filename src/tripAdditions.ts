@@ -80,6 +80,52 @@ const ginzaPlus = [
   },
 ];
 
+const ginzaUnagiRice = [
+  {
+    name: "TAKAHASHIYA Ginza ten",
+    area: "Higashi-ginza",
+    scoreLabel: "Tabelog 3.75",
+    familyNote: "Children and strollers welcome; unadon and unaju sets listed.",
+    reason: "Closest polished unagi rice option to the apartment and Kabukiza side of Ginza.",
+    href: "https://tabelog.com/en/tokyo/A1301/A130101/13262334/",
+  },
+  {
+    name: "Sumiyaki Unafuji Yuurakuchou ten",
+    area: "Yurakucho / Shimbashi",
+    scoreLabel: "Tabelog 3.69",
+    familyNote: "Children welcome; larger room and private-room options listed.",
+    reason: "Strong hitsumabushi/eel rice bowl fallback on the Ginza-Shimbashi edge.",
+    href: "https://tabelog.com/en/tokyo/A1301/A130103/13250032/",
+  },
+  {
+    name: "Unagi Hashimoto",
+    area: "Nihonbashi / Tokyo Station",
+    scoreLabel: "Tabelog 3.77",
+    familyNote: "Children welcome; table, raised-floor, and private-room seating listed.",
+    reason: "Best-score unagi rice option within a short taxi/train hop if Ginza is full.",
+    href: "https://tabelog.com/en/tokyo/A1302/A130202/13011474/",
+  },
+];
+
+const ginzaYakitori = [
+  {
+    name: "Yakitori Tsukiya",
+    area: "Ginza",
+    scoreLabel: "Tabelog 3.56",
+    familyNote: "Children welcome; kids menu listed.",
+    reason: "Most family-explicit Ginza yakitori fallback for a first-night dinner.",
+    href: "https://tabelog.com/en/tokyo/A1301/A130101/13257365/",
+  },
+  {
+    name: "Miyashin",
+    area: "Ginza",
+    scoreLabel: "Tabelog 3.54",
+    familyNote: "Children welcome; casual yakitori sister shop of Toriyoshi.",
+    reason: "Lower-key yakitori choice near Ginza if a course-heavy counter feels too formal.",
+    href: "https://tabelog.com/en/tokyo/A1301/A130101/13120595/",
+  },
+];
+
 const nihonbashi = [
   {
     name: "Nanba Sennichimae Kamatake Udon Yaesu North Exit",
@@ -344,8 +390,8 @@ export const attractionsByDate: Record<string, Attraction[]> = {
 };
 
 export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
-  { date: "2026-08-27", meal: "Lunch", context: "Optional after landing or if you need food before check-in", options: ginzaRamen },
-  { date: "2026-08-27", meal: "Dinner", context: "Easy first-night Japanese near Ginza/Shintomicho", options: [ginzaRamen[1], ginzaRamen[2], ginzaPlus[0]] },
+  { date: "2026-08-27", meal: "Lunch", context: "Unagi rice choices near Ginza after landing", options: ginzaUnagiRice },
+  { date: "2026-08-27", meal: "Dinner", context: "First-night yakitori choices while keeping Mugi to Olive", options: [ginzaPlus[0], ginzaYakitori[0], ginzaYakitori[1]] },
   { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Ginza after grazing", options: [ginzaPlus[2], ginzaRamen[0], ginzaRamen[1]] },
   { date: "2026-08-28", meal: "Dinner", context: "Ginza dinner backups after a light Tsukiji day", options: [ginzaPlus[0], ginzaRamen[2], ginzaPlus[1]] },
   { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro options near Sunshine City", options: ikebukuroLunch },

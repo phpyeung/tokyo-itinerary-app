@@ -31,6 +31,16 @@ for (const viewport of viewports) {
     await expect(page.getByText('Chinese Restaurant Dynasty Hilton Tokyo Bay').first()).toBeVisible();
     await expect(page.getByText('Teuchi Udon Iwashiya Aoyama')).toBeVisible();
 
+    const aug27 = page.locator('.day-section').first();
+    await expect(aug27.getByText('TAKAHASHIYA Ginza ten')).toBeVisible();
+    await expect(aug27.getByText('Sumiyaki Unafuji Yuurakuchou ten')).toBeVisible();
+    await expect(aug27.getByText('Unagi Hashimoto')).toBeVisible();
+    await expect(aug27.getByText('むぎとオリーブ 銀座本店')).toBeVisible();
+    await expect(aug27.getByText('Yakitori Tsukiya')).toBeVisible();
+    await expect(aug27.getByText('Miyashin')).toBeVisible();
+    await expect(aug27.getByText('支那麺 はしご 本店')).toHaveCount(0);
+    await expect(aug27.getByText('Tori to Shochu Yurikago')).toHaveCount(0);
+
     const primaryLinks = await page.locator('.link-row a').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
     expect(primaryLinks.length).toBe(15);
     expect(primaryLinks.every(Boolean)).toBeTruthy();
