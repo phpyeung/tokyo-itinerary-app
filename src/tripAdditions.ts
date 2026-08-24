@@ -11,6 +11,7 @@ export type Attraction = {
 
 export type RestaurantSuggestion = {
   name: string;
+  cuisine: string;
   area: string;
   scoreLabel: string;
   familyNote: string;
@@ -29,6 +30,7 @@ export type RestaurantSuggestionSet = {
 const ginzaRamen = [
   {
     name: "Ginza Kagari Honten",
+    cuisine: "Ramen",
     area: "Ginza",
     scoreLabel: "Tabelog 3.66",
     familyNote: "Children welcome; compact but casual ramen.",
@@ -37,6 +39,7 @@ const ginzaRamen = [
   },
   {
     name: "Sora no Iro Ginza Honten",
+    cuisine: "Ramen",
     area: "Shintomicho / Ginza",
     scoreLabel: "Tabelog 3.61",
     familyNote: "Children and strollers welcome; multilingual support listed.",
@@ -48,6 +51,7 @@ const ginzaRamen = [
 const ginzaPlus = [
   {
     name: "むぎとオリーブ 銀座本店",
+    cuisine: "Ramen",
     area: "Higashi-ginza",
     scoreLabel: "Tabelog 3.76",
     familyNote: "Small counter shop; best for older kids who can sit through a queue.",
@@ -56,6 +60,7 @@ const ginzaPlus = [
   },
   {
     name: "Soba Sasuga",
+    cuisine: "Soba",
     area: "Higashi-ginza",
     scoreLabel: "Tabelog 3.67",
     familyNote: "Children welcome; reservation path available.",
@@ -67,6 +72,7 @@ const ginzaPlus = [
 const ginzaUnagiRice = [
   {
     name: "TAKAHASHIYA Ginza ten",
+    cuisine: "Unagi",
     area: "Higashi-ginza",
     scoreLabel: "Tabelog 3.75",
     familyNote: "Children and strollers welcome; unadon and unaju sets listed.",
@@ -75,6 +81,7 @@ const ginzaUnagiRice = [
   },
   {
     name: "Sumiyaki Unafuji Yuurakuchou ten",
+    cuisine: "Unagi",
     area: "Yurakucho / Shimbashi",
     scoreLabel: "Tabelog 3.69",
     familyNote: "Children welcome; larger room and private-room options listed.",
@@ -83,6 +90,7 @@ const ginzaUnagiRice = [
   },
   {
     name: "Unagi Hashimoto",
+    cuisine: "Unagi",
     area: "Nihonbashi / Tokyo Station",
     scoreLabel: "Tabelog 3.77",
     familyNote: "Children welcome; table, raised-floor, and private-room seating listed.",
@@ -94,6 +102,7 @@ const ginzaUnagiRice = [
 const requestedGinzaPicks = [
   {
     name: "HONO Wagyu Teppan Ginza 鉄板焼 炎 銀座",
+    cuisine: "Teppanyaki",
     area: "Ginza",
     scoreLabel: "Requested pick - Tabelog 3.09",
     familyNote: "Lunch accepts preschool and elementary children; dinner is middle-school+.",
@@ -106,6 +115,7 @@ const requestedGinzaPicks = [
 const shintomichoNearHotel = [
   {
     name: "BROZERS' Shintomi chou ten",
+    cuisine: "Burger",
     area: "Shintomicho",
     scoreLabel: "Tabelog 3.56",
     familyNote: "Children, kids menu, and strollers welcome; open until 21:30.",
@@ -117,6 +127,7 @@ const shintomichoNearHotel = [
 const nihonbashi = [
   {
     name: "Nanba Sennichimae Kamatake Udon Yaesu North Exit",
+    cuisine: "Udon",
     area: "Tokyo Station",
     scoreLabel: "Tabelog 3.72",
     familyNote: "Children welcome; inexpensive and fast.",
@@ -125,6 +136,7 @@ const nihonbashi = [
   },
   {
     name: "Inaniwa Udon to Meshi Kaneko Hannosuke Coredo Muromachi",
+    cuisine: "Udon",
     area: "COREDO Muromachi",
     scoreLabel: "Tabelog 3.63",
     familyNote: "Children welcome; udon and rice sets work well for families.",
@@ -133,6 +145,7 @@ const nihonbashi = [
   },
   {
     name: "Tamacho Honten Yaesu Ten",
+    cuisine: "Udon",
     area: "Tokyo Station / Yaesu",
     scoreLabel: "Tabelog 3.63",
     familyNote: "Children welcome; simple udon/regional food setting.",
@@ -144,6 +157,7 @@ const nihonbashi = [
 const nihonbashiDinner = [
   {
     name: "Tamai Honten",
+    cuisine: "Anago rice",
     area: "Nihonbashi",
     scoreLabel: "Tabelog 3.61",
     familyNote: "Children welcome; evening seats can be reserved.",
@@ -157,6 +171,7 @@ const nihonbashiDinner = [
 const ikebukuroLunch = [
   {
     name: "Japanese Ramen Gokan",
+    cuisine: "Ramen",
     area: "Ikebukuro",
     scoreLabel: "Tabelog 3.96",
     familyNote: "Children welcome; ramen counter, expect queues.",
@@ -165,6 +180,7 @@ const ikebukuroLunch = [
   },
   {
     name: "Menya Hulu-lu",
+    cuisine: "Ramen",
     area: "Ikebukuro",
     scoreLabel: "Tabelog 3.76",
     familyNote: "Children welcome; casual ramen shop.",
@@ -173,6 +189,7 @@ const ikebukuroLunch = [
   },
   {
     name: "Karashibi Miso Ramen Kikanbo Ikebukuro",
+    cuisine: "Ramen",
     area: "Ikebukuro",
     scoreLabel: "Tabelog 3.64",
     familyNote: "Children welcome, but spicy; order carefully for kids.",
@@ -185,6 +202,7 @@ const ikebukuroDinner = [
   ikebukuroLunch[1],
   {
     name: "Shinjiko Shijimi Chuka Soba Kohaku Ikebukuro ten",
+    cuisine: "Ramen",
     area: "Ikebukuro",
     scoreLabel: "Tabelog 3.74",
     familyNote: "Children welcome; non-smoking ramen shop with full-day hours.",
@@ -197,6 +215,7 @@ const ikebukuroDinner = [
 const toyosuLunch = [
   {
     name: "Daiwa Sushi",
+    cuisine: "Sushi",
     area: "Toyosu Market",
     scoreLabel: "Tabelog 3.63",
     familyNote: "Children welcome; counter only, go early.",
@@ -205,6 +224,7 @@ const toyosuLunch = [
   },
   {
     name: "Sushi Dai",
+    cuisine: "Sushi",
     area: "Toyosu Market",
     scoreLabel: "Tabelog 3.64",
     familyNote: "Children welcome; very early reservation-at-store flow.",
@@ -217,6 +237,7 @@ const toyosuLunch = [
 const asakusaLunch = [
   {
     name: "Namiki Yabu Soba",
+    cuisine: "Soba",
     area: "Asakusa",
     scoreLabel: "Tabelog 3.67",
     familyNote: "Traditional soba; better for kids comfortable with simple noodles.",
@@ -225,6 +246,7 @@ const asakusaLunch = [
   },
   {
     name: "Edo Soba Hosokawa",
+    cuisine: "Soba",
     area: "Ryogoku",
     scoreLabel: "Tabelog 3.66",
     familyNote: "Quiet soba setting; best for older kids.",
@@ -233,6 +255,7 @@ const asakusaLunch = [
   },
   {
     name: "Sushi Hisaichi",
+    cuisine: "Sushi",
     area: "Asakusa",
     scoreLabel: "Tabelog 3.68",
     familyNote: "Children welcome; expensive, reserve for a calmer sushi meal.",
@@ -245,6 +268,7 @@ const asakusaDinner = [
   asakusaLunch[1],
   {
     name: "Asakusa ASA Tora",
+    cuisine: "Seafood izakaya",
     area: "Asakusa",
     scoreLabel: "Tabelog 3.65",
     familyNote: "Izakaya-style seafood; check smoking/seating before going with kids.",
@@ -257,6 +281,7 @@ const asakusaDinner = [
 const omotesandoLunch = [
   {
     name: "Teuchi Udon Iwashiya Aoyama",
+    cuisine: "Udon",
     area: "Aoyama-itchome / Omotesando side",
     scoreLabel: "Tabelog 3.66",
     familyNote: "Children welcome; inexpensive Sanuki udon.",
@@ -265,6 +290,7 @@ const omotesandoLunch = [
   },
   {
     name: "Teuchi Shimada",
+    cuisine: "Soba / Udon",
     area: "Omotesando",
     scoreLabel: "Tabelog 3.62",
     familyNote: "Children welcome; lunch is more family-friendly than late izakaya hours.",
@@ -273,6 +299,7 @@ const omotesandoLunch = [
   },
   {
     name: "Men Ginza Onodera Honten",
+    cuisine: "Ramen",
     area: "Omotesando",
     scoreLabel: "Tabelog 3.64",
     familyNote: "Children welcome; casual ramen near Omotesando.",
@@ -284,6 +311,7 @@ const omotesandoLunch = [
 const omotesandoDinner = [
   {
     name: "tonkatsu.jp Omotesando",
+    cuisine: "Tonkatsu",
     area: "Omotesando",
     scoreLabel: "Tabelog 3.70",
     familyNote: "Children welcome; tonkatsu specialist.",
@@ -292,6 +320,7 @@ const omotesandoDinner = [
   },
   {
     name: "Pretty Pork Factory & Katsu Puripo",
+    cuisine: "Tonkatsu",
     area: "Meiji-jingumae",
     scoreLabel: "Tabelog 3.74",
     familyNote: "Children welcome; pricier pork-focused meal.",
@@ -304,6 +333,7 @@ const omotesandoDinner = [
 const disneyFamily = [
   {
     name: "Chinese Restaurant Dynasty Hilton Tokyo Bay",
+    cuisine: "Chinese",
     area: "Bayside Station",
     scoreLabel: "Tabelog 3.64",
     familyNote: "Children welcome; kids set listed by Hilton.",
@@ -312,6 +342,7 @@ const disneyFamily = [
   },
   {
     name: "Restaurant Hokusai",
+    cuisine: "Japanese",
     area: "Tokyo Disneyland",
     scoreLabel: "Disney official pick",
     familyNote: "Children welcome; kids menu, stroller support, and Priority Seating.",
@@ -321,6 +352,7 @@ const disneyFamily = [
   },
   {
     name: "Sherwood Garden Restaurant",
+    cuisine: "Buffet",
     area: "Tokyo Disneyland Hotel",
     scoreLabel: "Disney official pick",
     familyNote: "Children's menus and lower child buffet counter listed by Disney.",

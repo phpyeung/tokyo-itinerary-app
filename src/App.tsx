@@ -211,11 +211,14 @@ export function App() {
                     </div>
                     <div className="meal-card__title-row">
                       <h3>{item.restaurant}</h3>
-                      {item.featured ? (
-                        <span className="featured" aria-label="Starred pick">
-                          <Star size={16} fill="currentColor" />
-                        </span>
-                      ) : null}
+                      <div className="meal-card__badges">
+                        <span className="cuisine-chip">{item.cuisine}</span>
+                        {item.featured ? (
+                          <span className="featured" aria-label="Starred pick">
+                            <Star size={16} fill="currentColor" />
+                          </span>
+                        ) : null}
+                      </div>
                     </div>
                     <p className="meal-area">
                       <MapPin size={16} />
@@ -267,10 +270,13 @@ export function App() {
                               <strong>{option.name}</strong>
                               <ExternalLink size={14} />
                             </div>
-                            <span className={option.exception ? "score-chip score-chip--exception" : "score-chip"}>
-                              {option.exception ? <Ticket size={13} /> : <Star size={13} fill="currentColor" />}
-                              {option.scoreLabel}
-                            </span>
+                            <div className="suggestion-meta-row">
+                              <span className={option.exception ? "score-chip score-chip--exception" : "score-chip"}>
+                                {option.exception ? <Ticket size={13} /> : <Star size={13} fill="currentColor" />}
+                                {option.scoreLabel}
+                              </span>
+                              <span className="cuisine-chip">{option.cuisine}</span>
+                            </div>
                             <p>{option.area}</p>
                             <p>{option.familyNote}</p>
                             <em>{option.reason}</em>

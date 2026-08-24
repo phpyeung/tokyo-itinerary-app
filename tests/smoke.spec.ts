@@ -17,6 +17,7 @@ for (const viewport of viewports) {
     await expect(page.locator('.meal-card')).toHaveCount(16);
     await expect(page.locator('.attraction-item')).toHaveCount(26);
     await expect(page.locator('.suggestion-option')).toHaveCount(57);
+    await expect(page.locator('.cuisine-chip')).toHaveCount(73);
 
     await expect(page.getByText('銀座 八五')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'YAKITORI Moe' })).toBeVisible();
@@ -31,12 +32,17 @@ for (const viewport of viewports) {
     await expect(page.getByText('Chinese Restaurant Dynasty Hilton Tokyo Bay').first()).toBeVisible();
     await expect(page.getByText('Teuchi Udon Iwashiya Aoyama')).toBeVisible();
     await expect(page.getByText('HONO Wagyu Teppan Ginza 鉄板焼 炎 銀座')).toBeVisible();
+    await expect(page.locator('.meal-card').filter({ hasText: 'cossott\'e SP' }).locator('.cuisine-chip').getByText('Yakiniku', { exact: true })).toBeVisible();
+    await expect(page.locator('.meal-card').filter({ hasText: 'YAKITORI Moe' }).locator('.cuisine-chip').getByText('Yakitori', { exact: true })).toBeVisible();
+    await expect(page.locator('.meal-card').filter({ hasText: '日本橋海鮮丼 つじ半 アークヒルズ店' }).locator('.cuisine-chip').getByText('Kaisen don', { exact: true })).toBeVisible();
 
     const aug27 = page.locator('.day-section').first();
     await expect(aug27.getByText('TAKAHASHIYA Ginza ten')).toBeVisible();
+    await expect(aug27.locator('.suggestion-option').filter({ hasText: 'TAKAHASHIYA Ginza ten' }).locator('.cuisine-chip').getByText('Unagi', { exact: true })).toBeVisible();
     await expect(aug27.getByText('Sumiyaki Unafuji Yuurakuchou ten')).toBeVisible();
     await expect(aug27.getByText('Unagi Hashimoto')).toBeVisible();
     await expect(aug27.getByText('むぎとオリーブ 銀座本店')).toBeVisible();
+    await expect(aug27.locator('.suggestion-option').filter({ hasText: 'むぎとオリーブ 銀座本店' }).locator('.cuisine-chip').getByText('Ramen', { exact: true })).toBeVisible();
     await expect(aug27.getByText('Ginza Kagari Honten')).toBeVisible();
     await expect(aug27.getByText('Soba Sasuga')).toBeVisible();
     await expect(aug27.getByText('Sora no Iro Ginza Honten')).toBeVisible();

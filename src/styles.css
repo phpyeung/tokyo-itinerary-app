@@ -270,6 +270,16 @@ h1 {
   gap: 12px;
 }
 
+.meal-card__badges {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  max-width: 45%;
+}
+
 .meal-type {
   color: var(--muted);
   font-size: 0.83rem;
@@ -287,6 +297,22 @@ h1 {
   font-size: 0.78rem;
   font-weight: 900;
   white-space: nowrap;
+}
+
+.cuisine-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  border: 1px solid rgba(22, 99, 83, 0.18);
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: rgba(22, 99, 83, 0.1);
+  color: var(--green);
+  font-size: 0.74rem;
+  font-weight: 950;
+  line-height: 1;
+  white-space: normal;
+  text-align: center;
 }
 
 .status-reserve {
@@ -658,6 +684,13 @@ h1 {
 .score-chip--exception {
   background: rgba(36, 110, 155, 0.13);
   color: var(--blue);
+}
+
+.suggestion-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
 }
 
 .suggestion-option p,
