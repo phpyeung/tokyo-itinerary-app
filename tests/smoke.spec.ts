@@ -36,8 +36,10 @@ for (const viewport of viewports) {
     await expect(aug27.getByText('Sumiyaki Unafuji Yuurakuchou ten')).toBeVisible();
     await expect(aug27.getByText('Unagi Hashimoto')).toBeVisible();
     await expect(aug27.getByText('むぎとオリーブ 銀座本店')).toBeVisible();
-    await expect(aug27.getByText('Yakitori Tsukiya')).toBeVisible();
-    await expect(aug27.getByText('Miyashin')).toBeVisible();
+    await expect(aug27.getByText('Ginza Kagari Honten')).toBeVisible();
+    await expect(aug27.getByText('Soba Sasuga')).toBeVisible();
+    await expect(aug27.getByText('Yakitori Tsukiya')).toHaveCount(0);
+    await expect(aug27.getByText('Miyashin')).toHaveCount(0);
     await expect(aug27.getByText('支那麺 はしご 本店')).toHaveCount(0);
     await expect(aug27.getByText('Tori to Shochu Yurikago')).toHaveCount(0);
 

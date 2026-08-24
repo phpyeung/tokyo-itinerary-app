@@ -33,7 +33,7 @@ const ginzaRamen = [
     scoreLabel: "Tabelog 3.66",
     familyNote: "Children welcome; compact but casual ramen.",
     reason: "Easy Ginza fallback for chicken paitan ramen near the hotel zone.",
-    href: "https://tabelog.com/en/tokyo/A1301/A130101/13053200/",
+    href: "https://tabelog.com/en/tokyo/A1301/A130101/13230021/",
   },
   {
     name: "Sora no Iro Ginza Honten",
@@ -42,14 +42,6 @@ const ginzaRamen = [
     familyNote: "Children and strollers welcome; multilingual support listed.",
     reason: "Useful near Premium Apart MONday Ginza East and good for a low-friction first meal.",
     href: "https://tabelog.com/en/tokyo/A1301/A130101/13314476/",
-  },
-  {
-    name: "支那麺 はしご 本店",
-    area: "Ginza",
-    scoreLabel: "Tabelog 3.70",
-    familyNote: "Children allowed; counter seating, so best for older kids.",
-    reason: "Reliable late-running Ginza noodle option with rice and mild spice adjustment.",
-    href: "https://tabelog.com/tokyo/A1301/A130101/13092185/",
   },
 ];
 
@@ -69,14 +61,6 @@ const ginzaPlus = [
     familyNote: "Children welcome; reservation path available.",
     reason: "Polished soba close to the apartment area and a strong final-lunch candidate.",
     href: "https://tabelog.com/en/tokyo/A1301/A130101/13002488/",
-  },
-  {
-    name: "Soba Kaiseki Tsukiji Bunkajin Kaza",
-    area: "Tsukiji / Higashi-ginza",
-    scoreLabel: "Tabelog 3.65",
-    familyNote: "Quiet soba-kappo; better for older kids than toddlers.",
-    reason: "Good seated alternative when Tsukiji grazing needs a calmer backup.",
-    href: "https://tabelog.com/en/tokyo/A1301/A130101/13021067/",
   },
 ];
 
@@ -107,25 +91,6 @@ const ginzaUnagiRice = [
   },
 ];
 
-const ginzaYakitori = [
-  {
-    name: "Yakitori Tsukiya",
-    area: "Ginza",
-    scoreLabel: "Tabelog 3.56",
-    familyNote: "Children welcome; kids menu listed.",
-    reason: "Most family-explicit Ginza yakitori fallback for a first-night dinner.",
-    href: "https://tabelog.com/en/tokyo/A1301/A130101/13257365/",
-  },
-  {
-    name: "Miyashin",
-    area: "Ginza",
-    scoreLabel: "Tabelog 3.54",
-    familyNote: "Children welcome; casual yakitori sister shop of Toriyoshi.",
-    reason: "Lower-key yakitori choice near Ginza if a course-heavy counter feels too formal.",
-    href: "https://tabelog.com/en/tokyo/A1301/A130101/13120595/",
-  },
-];
-
 const nihonbashi = [
   {
     name: "Nanba Sennichimae Kamatake Udon Yaesu North Exit",
@@ -133,7 +98,7 @@ const nihonbashi = [
     scoreLabel: "Tabelog 3.72",
     familyNote: "Children welcome; inexpensive and fast.",
     reason: "Very convenient before or after Character Street.",
-    href: "https://tabelog.com/en/tokyo/A1302/A130201/13192013/",
+    href: "https://tabelog.com/en/tokyo/A1302/A130201/13156494/",
   },
   {
     name: "Inaniwa Udon to Meshi Kaneko Hannosuke Coredo Muromachi",
@@ -149,7 +114,7 @@ const nihonbashi = [
     scoreLabel: "Tabelog 3.63",
     familyNote: "Children welcome; simple udon/regional food setting.",
     reason: "Good station-area fallback if Nihonbashi gets too wet or crowded.",
-    href: "https://tabelog.com/en/tokyo/A1302/A130201/13006439/",
+    href: "https://tabelog.com/en/tokyo/A1302/A130201/13015841/",
   },
 ];
 
@@ -173,7 +138,7 @@ const ikebukuroLunch = [
     scoreLabel: "Tabelog 3.96",
     familyNote: "Children welcome; ramen counter, expect queues.",
     reason: "High-scoring ramen close enough to Sunshine City for a serious lunch.",
-    href: "https://tabelog.com/en/tokyo/A1305/A130501/13284045/",
+    href: "https://tabelog.com/en/tokyo/A1305/A130501/13284009/",
   },
   {
     name: "Menya Hulu-lu",
@@ -189,19 +154,19 @@ const ikebukuroLunch = [
     scoreLabel: "Tabelog 3.64",
     familyNote: "Children welcome, but spicy; order carefully for kids.",
     reason: "Strong rainy-day ramen option for adults who want spice.",
-    href: "https://tabelog.com/en/tokyo/A1305/A130501/13215788/",
+    href: "https://tabelog.com/en/tokyo/A1305/A130501/13171114/",
   },
 ];
 
 const ikebukuroDinner = [
   ikebukuroLunch[1],
   {
-    name: "Mutekiya",
+    name: "Shinjiko Shijimi Chuka Soba Kohaku Ikebukuro ten",
     area: "Ikebukuro",
-    scoreLabel: "Tabelog 3.61",
-    familyNote: "Children welcome; 17 counter seats, no reservations.",
-    reason: "Classic Ikebukuro ramen fallback with long hours.",
-    href: "https://tabelog.com/en/tokyo/A1305/A130501/13003927/",
+    scoreLabel: "Tabelog 3.74",
+    familyNote: "Children welcome; non-smoking ramen shop with full-day hours.",
+    reason: "Higher-scoring Ikebukuro ramen fallback that clears the >3.6 filter.",
+    href: "https://tabelog.com/en/tokyo/A1305/A130501/13283190/",
   },
   ikebukuroLunch[0],
 ];
@@ -241,7 +206,7 @@ const asakusaLunch = [
     scoreLabel: "Tabelog 3.66",
     familyNote: "Quiet soba setting; best for older kids.",
     reason: "Useful bridge between Skytree/Ryogoku and the Hasegawa dinner area.",
-    href: "https://tabelog.com/en/tokyo/A1312/A131201/13017934/",
+    href: "https://tabelog.com/en/tokyo/A1312/A131201/13002967/",
   },
   {
     name: "Sushi Hisaichi",
@@ -249,7 +214,7 @@ const asakusaLunch = [
     scoreLabel: "Tabelog 3.68",
     familyNote: "Children welcome; expensive, reserve for a calmer sushi meal.",
     reason: "Premium backup if the family wants sushi instead of soba/tempura.",
-    href: "https://tabelog.com/en/tokyo/A1311/A131102/13003716/",
+    href: "https://tabelog.com/en/tokyo/A1311/A131102/13021324/",
   },
 ];
 
@@ -261,7 +226,7 @@ const asakusaDinner = [
     scoreLabel: "Tabelog 3.65",
     familyNote: "Izakaya-style seafood; check smoking/seating before going with kids.",
     reason: "Good if you stay around Asakusa rather than committing to tonkatsu.",
-    href: "https://tabelog.com/en/tokyo/A1311/A131102/13206068/",
+    href: "https://tabelog.com/en/tokyo/A1311/A131102/13259649/",
   },
   asakusaLunch[0],
 ];
@@ -273,7 +238,7 @@ const omotesandoLunch = [
     scoreLabel: "Tabelog 3.66",
     familyNote: "Children welcome; inexpensive Sanuki udon.",
     reason: "Easy family lunch after Meiji Shrine/Omotesando walking.",
-    href: "https://tabelog.com/en/tokyo/A1306/A130603/13147426/",
+    href: "https://tabelog.com/en/tokyo/A1306/A130603/13224471/",
   },
   {
     name: "Teuchi Shimada",
@@ -281,7 +246,7 @@ const omotesandoLunch = [
     scoreLabel: "Tabelog 3.62",
     familyNote: "Children welcome; lunch is more family-friendly than late izakaya hours.",
     reason: "Soba/udon choice right in the Omotesando corridor.",
-    href: "https://tabelog.com/en/tokyo/A1306/A130602/13007364/",
+    href: "https://tabelog.com/en/tokyo/A1306/A130602/13006991/",
   },
   {
     name: "Men Ginza Onodera Honten",
@@ -289,7 +254,7 @@ const omotesandoLunch = [
     scoreLabel: "Tabelog 3.64",
     familyNote: "Children welcome; casual ramen near Omotesando.",
     reason: "Good noodle stop that also fits the app's existing Onodera theme.",
-    href: "https://tabelog.com/en/tokyo/A1306/A130602/13296296/",
+    href: "https://tabelog.com/en/tokyo/A1306/A130602/13295645/",
   },
 ];
 
@@ -300,7 +265,7 @@ const omotesandoDinner = [
     scoreLabel: "Tabelog 3.70",
     familyNote: "Children welcome; tonkatsu specialist.",
     reason: "Family-friendly replacement if YAKITORI Moe's under-18 rule does not work.",
-    href: "https://tabelog.com/en/tokyo/A1306/A130602/13258372/",
+    href: "https://tabelog.com/en/tokyo/A1306/A130602/13264557/",
   },
   {
     name: "Pretty Pork Factory & Katsu Puripo",
@@ -308,7 +273,7 @@ const omotesandoDinner = [
     scoreLabel: "Tabelog 3.74",
     familyNote: "Children welcome; pricier pork-focused meal.",
     reason: "Close to Harajuku/Shibuya and easier with kids than adult-only yakitori.",
-    href: "https://tabelog.com/en/tokyo/A1306/A130601/13273610/",
+    href: "https://tabelog.com/en/tokyo/A1306/A130601/13295369/",
   },
   omotesandoLunch[1],
 ];
@@ -391,9 +356,9 @@ export const attractionsByDate: Record<string, Attraction[]> = {
 
 export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-08-27", meal: "Lunch", context: "Unagi rice choices near Ginza after landing", options: ginzaUnagiRice },
-  { date: "2026-08-27", meal: "Dinner", context: "First-night yakitori choices while keeping Mugi to Olive", options: [ginzaPlus[0], ginzaYakitori[0], ginzaYakitori[1]] },
-  { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Ginza after grazing", options: [ginzaPlus[2], ginzaRamen[0], ginzaRamen[1]] },
-  { date: "2026-08-28", meal: "Dinner", context: "Ginza dinner backups after a light Tsukiji day", options: [ginzaPlus[0], ginzaRamen[2], ginzaPlus[1]] },
+  { date: "2026-08-27", meal: "Dinner", context: "Verified >3.6 family-friendly Ginza dinner backups", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1]] },
+  { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Ginza after grazing", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1]] },
+  { date: "2026-08-28", meal: "Dinner", context: "Ginza dinner backups after a light Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1]] },
   { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro options near Sunshine City", options: ikebukuroLunch },
   { date: "2026-08-29", meal: "Dinner", context: "Casual Ikebukuro dinner options", options: ikebukuroDinner },
   { date: "2026-08-30", meal: "Lunch", context: "Tokyo Station / Nihonbashi family-friendly picks", options: nihonbashi },
@@ -407,5 +372,5 @@ export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-09-03", meal: "Lunch", context: "Meiji Shrine / Omotesando / Shibuya lunch backups", options: omotesandoLunch },
   { date: "2026-09-03", meal: "Dinner", context: "Family-friendly backups because YAKITORI Moe is adults-only", options: omotesandoDinner },
   { date: "2026-09-04", meal: "Lunch", context: "Final lunch near Ginza before luggage pickup", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1]] },
-  { date: "2026-09-04", meal: "Dinner", context: "Pre-flight backups only if you eat before Haneda", options: [ginzaRamen[2], ginzaPlus[0], ginzaRamen[0]] },
+  { date: "2026-09-04", meal: "Dinner", context: "Pre-flight backups only if you eat before Haneda", options: [ginzaRamen[0], ginzaPlus[0], ginzaRamen[1]] },
 ];
