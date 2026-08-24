@@ -120,6 +120,16 @@ const requestedGinzaPicks = [
     href: "https://tabelog.com/en/tokyo/A1302/A130203/13254458/",
     exception: true,
   },
+  {
+    name: "Men Ginza Onodera Higashi ginza ten",
+    cuisine: "Ramen",
+    area: "Higashi-ginza",
+    scoreLabel: "Requested pick - Tabelog 3.48",
+    familyNote: "Children welcome; counter and table seating listed, with stroller parking outside.",
+    reason: "Walk-in ramen option near Ginza/Higashi-ginza for the first dinner after hotel check-in.",
+    href: "https://tabelog.com/en/tokyo/A1301/A130101/13315560/",
+    exception: true,
+  },
 ];
 
 const shintomichoNearHotel = [
@@ -421,7 +431,7 @@ export const attractionsByDate: Record<string, Attraction[]> = {
 
 export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-08-27", meal: "Lunch", context: "Unagi rice choices near Ginza after landing", options: ginzaUnagiRice },
-  { date: "2026-08-27", meal: "Dinner", context: "Verified Ginza backups plus two near-hotel Shintomicho arrival options", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], ginzaRamen[1], shintomichoNearHotel[0]] },
+  { date: "2026-08-27", meal: "Dinner", context: "Verified Ginza backups plus near-hotel Shintomicho arrival options and requested Onodera ramen", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], ginzaRamen[1], shintomichoNearHotel[0], requestedGinzaPicks[2]] },
   { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Ginza after grazing, plus requested HONO teppanyaki", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1], requestedGinzaPicks[0]] },
   { date: "2026-08-28", meal: "Dinner", context: "Ginza and near-hotel dinner backups after a light Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], requestedGinzaPicks[1]] },
   { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro options near Sunshine City", options: ikebukuroLunch },
