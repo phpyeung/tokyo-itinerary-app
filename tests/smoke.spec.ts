@@ -16,8 +16,8 @@ for (const viewport of viewports) {
     await expect(page.getByRole('heading', { name: 'Tokyo Itinerary' })).toBeVisible();
     await expect(page.locator('.meal-card')).toHaveCount(16);
     await expect(page.locator('.attraction-item')).toHaveCount(26);
-    await expect(page.locator('.suggestion-option')).toHaveCount(59);
-    await expect(page.locator('.cuisine-chip')).toHaveCount(75);
+    await expect(page.locator('.suggestion-option')).toHaveCount(60);
+    await expect(page.locator('.cuisine-chip')).toHaveCount(76);
 
     await expect(page.getByText('銀座 八五')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'YAKITORI Moe' })).toBeVisible();
@@ -34,6 +34,8 @@ for (const viewport of viewports) {
     await expect(page.getByText('HONO Wagyu Teppan Ginza 鉄板焼 炎 銀座')).toBeVisible();
     await expect(page.getByText('Sushi Umezawa')).toBeVisible();
     await expect(page.locator('.suggestion-option').filter({ hasText: 'Sushi Umezawa' }).locator('.cuisine-chip').getByText('Sushi', { exact: true })).toBeVisible();
+    await expect(page.getByText('Tsukiji Kaisen no Don')).toBeVisible();
+    await expect(page.locator('.suggestion-option').filter({ hasText: 'Tsukiji Kaisen no Don' }).locator('.cuisine-chip').getByText('Kaisen don', { exact: true })).toBeVisible();
     await expect(page.locator('.meal-card').filter({ hasText: 'cossott\'e SP' }).locator('.cuisine-chip').getByText('Yakiniku', { exact: true })).toBeVisible();
     await expect(page.locator('.meal-card').filter({ hasText: 'YAKITORI Moe' }).locator('.cuisine-chip').getByText('Yakitori', { exact: true })).toBeVisible();
     await expect(page.locator('.meal-card').filter({ hasText: '日本橋海鮮丼 つじ半 アークヒルズ店' }).locator('.cuisine-chip').getByText('Kaisen don', { exact: true })).toBeVisible();
@@ -61,7 +63,7 @@ for (const viewport of viewports) {
     expect(primaryLinks.every(Boolean)).toBeTruthy();
 
     const suggestionLinks = await page.locator('.suggestion-option').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
-    expect(suggestionLinks.length).toBe(59);
+    expect(suggestionLinks.length).toBe(60);
     expect(suggestionLinks.every(Boolean)).toBeTruthy();
 
     const attractionLinks = await page.locator('.attraction-item a').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
