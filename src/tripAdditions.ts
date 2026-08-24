@@ -91,6 +91,18 @@ const ginzaUnagiRice = [
   },
 ];
 
+const requestedGinzaPicks = [
+  {
+    name: "HONO Wagyu Teppan Ginza 鉄板焼 炎 銀座",
+    area: "Ginza",
+    scoreLabel: "Requested pick - Tabelog 3.09",
+    familyNote: "Lunch accepts preschool and elementary children; dinner is middle-school+.",
+    reason: "Best fit on the Tsukiji/Ginza day as a reserved teppanyaki lunch after the morning market.",
+    href: "https://tabelog.com/en/tokyo/A1301/A130101/13314108/",
+    exception: true,
+  },
+];
+
 const nihonbashi = [
   {
     name: "Nanba Sennichimae Kamatake Udon Yaesu North Exit",
@@ -357,7 +369,7 @@ export const attractionsByDate: Record<string, Attraction[]> = {
 export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-08-27", meal: "Lunch", context: "Unagi rice choices near Ginza after landing", options: ginzaUnagiRice },
   { date: "2026-08-27", meal: "Dinner", context: "Verified >3.6 family-friendly Ginza dinner backups", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1]] },
-  { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Ginza after grazing", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1]] },
+  { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Ginza after grazing, plus requested HONO teppanyaki", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1], requestedGinzaPicks[0]] },
   { date: "2026-08-28", meal: "Dinner", context: "Ginza dinner backups after a light Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1]] },
   { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro options near Sunshine City", options: ikebukuroLunch },
   { date: "2026-08-29", meal: "Dinner", context: "Casual Ikebukuro dinner options", options: ikebukuroDinner },

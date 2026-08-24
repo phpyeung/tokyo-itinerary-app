@@ -245,7 +245,7 @@ export function App() {
                     <Utensils size={17} />
                     Restaurant backups
                   </h3>
-                  <strong>3 per lunch and dinner</strong>
+                  <strong>Curated lunch and dinner picks</strong>
                 </div>
                 <div className="suggestion-grid">
                   {group.suggestions.map((set) => (
