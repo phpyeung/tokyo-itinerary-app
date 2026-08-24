@@ -103,6 +103,17 @@ const requestedGinzaPicks = [
   },
 ];
 
+const shintomichoNearHotel = [
+  {
+    name: "BROZERS' Shintomi chou ten",
+    area: "Shintomicho",
+    scoreLabel: "Tabelog 3.56",
+    familyNote: "Children, kids menu, and strollers welcome; open until 21:30.",
+    reason: "About a 3-minute walk from Shintomicho Station, useful for an easy first-night meal near Premium Apart MONday Ginza East.",
+    href: "https://tabelog.com/en/tokyo/A1313/A131301/13144295/",
+  },
+];
+
 const nihonbashi = [
   {
     name: "Nanba Sennichimae Kamatake Udon Yaesu North Exit",
@@ -368,7 +379,7 @@ export const attractionsByDate: Record<string, Attraction[]> = {
 
 export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-08-27", meal: "Lunch", context: "Unagi rice choices near Ginza after landing", options: ginzaUnagiRice },
-  { date: "2026-08-27", meal: "Dinner", context: "Verified >3.6 family-friendly Ginza dinner backups", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1]] },
+  { date: "2026-08-27", meal: "Dinner", context: "Verified Ginza backups plus two near-hotel Shintomicho arrival options", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], ginzaRamen[1], shintomichoNearHotel[0]] },
   { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Ginza after grazing, plus requested HONO teppanyaki", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1], requestedGinzaPicks[0]] },
   { date: "2026-08-28", meal: "Dinner", context: "Ginza dinner backups after a light Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1]] },
   { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro options near Sunshine City", options: ikebukuroLunch },

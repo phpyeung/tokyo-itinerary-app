@@ -16,7 +16,7 @@ for (const viewport of viewports) {
     await expect(page.getByRole('heading', { name: 'Tokyo Itinerary' })).toBeVisible();
     await expect(page.locator('.meal-card')).toHaveCount(16);
     await expect(page.locator('.attraction-item')).toHaveCount(26);
-    await expect(page.locator('.suggestion-option')).toHaveCount(55);
+    await expect(page.locator('.suggestion-option')).toHaveCount(57);
 
     await expect(page.getByText('銀座 八五')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'YAKITORI Moe' })).toBeVisible();
@@ -39,6 +39,8 @@ for (const viewport of viewports) {
     await expect(aug27.getByText('むぎとオリーブ 銀座本店')).toBeVisible();
     await expect(aug27.getByText('Ginza Kagari Honten')).toBeVisible();
     await expect(aug27.getByText('Soba Sasuga')).toBeVisible();
+    await expect(aug27.getByText('Sora no Iro Ginza Honten')).toBeVisible();
+    await expect(aug27.getByText("BROZERS' Shintomi chou ten")).toBeVisible();
     await expect(aug27.getByText('Yakitori Tsukiya')).toHaveCount(0);
     await expect(aug27.getByText('Miyashin')).toHaveCount(0);
     await expect(aug27.getByText('支那麺 はしご 本店')).toHaveCount(0);
@@ -49,7 +51,7 @@ for (const viewport of viewports) {
     expect(primaryLinks.every(Boolean)).toBeTruthy();
 
     const suggestionLinks = await page.locator('.suggestion-option').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
-    expect(suggestionLinks.length).toBe(55);
+    expect(suggestionLinks.length).toBe(57);
     expect(suggestionLinks.every(Boolean)).toBeTruthy();
 
     const attractionLinks = await page.locator('.attraction-item a').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
