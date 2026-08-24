@@ -110,6 +110,16 @@ const requestedGinzaPicks = [
     href: "https://tabelog.com/en/tokyo/A1301/A130101/13314108/",
     exception: true,
   },
+  {
+    name: "Sushi Umezawa",
+    cuisine: "Sushi",
+    area: "Hatchobori / Shintomicho",
+    scoreLabel: "Requested pick - Tabelog 3.55",
+    familyNote: "Children welcome; evening is best for kids who can sit through and eat the same course.",
+    reason: "About a 4-minute walk from Shintomicho Station, making it a convenient near-hotel sushi option after the Tsukiji/Ginza day.",
+    href: "https://tabelog.com/en/tokyo/A1302/A130203/13254458/",
+    exception: true,
+  },
 ];
 
 const shintomichoNearHotel = [
@@ -413,7 +423,7 @@ export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-08-27", meal: "Lunch", context: "Unagi rice choices near Ginza after landing", options: ginzaUnagiRice },
   { date: "2026-08-27", meal: "Dinner", context: "Verified Ginza backups plus two near-hotel Shintomicho arrival options", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], ginzaRamen[1], shintomichoNearHotel[0]] },
   { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Ginza after grazing, plus requested HONO teppanyaki", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1], requestedGinzaPicks[0]] },
-  { date: "2026-08-28", meal: "Dinner", context: "Ginza dinner backups after a light Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1]] },
+  { date: "2026-08-28", meal: "Dinner", context: "Ginza and near-hotel dinner backups after a light Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], requestedGinzaPicks[1]] },
   { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro options near Sunshine City", options: ikebukuroLunch },
   { date: "2026-08-29", meal: "Dinner", context: "Casual Ikebukuro dinner options", options: ikebukuroDinner },
   { date: "2026-08-30", meal: "Lunch", context: "Tokyo Station / Nihonbashi family-friendly picks", options: nihonbashi },
