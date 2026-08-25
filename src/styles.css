@@ -86,7 +86,6 @@ main {
 
 .eyebrow,
 .hero__stats span,
-.meal-area,
 .link-row a {
   display: inline-flex;
   align-items: center;
@@ -249,11 +248,8 @@ h1 {
 }
 
 .meal-card {
-  min-height: 270px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 18px;
+  min-height: 250px;
+  overflow: hidden;
   border: 1px solid rgba(104, 87, 65, 0.2);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.66), transparent 62%),
@@ -262,29 +258,62 @@ h1 {
   box-shadow: 0 14px 38px rgba(71, 50, 30, 0.08);
 }
 
+.meal-card__shell {
+  min-height: 250px;
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+}
+
+.meal-card__time {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 6px;
+  padding: 18px 12px;
+  border-right: 1px solid rgba(104, 87, 65, 0.16);
+  background:
+    linear-gradient(180deg, rgba(36, 110, 155, 0.12), rgba(22, 99, 83, 0.1)),
+    rgba(255, 250, 241, 0.72);
+  text-align: center;
+}
+
+.meal-card__time span {
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.meal-card__time small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.meal-card__body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 17px;
+}
+
 .meal-card__topline,
 .meal-card__title-row {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
-.meal-card__badges {
-  flex: 0 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+.meal-card__topline {
   align-items: center;
-  justify-content: flex-end;
-  gap: 6px;
-  max-width: 45%;
+  flex-wrap: wrap;
 }
 
-.meal-type {
-  color: var(--muted);
-  font-size: 0.83rem;
-  font-weight: 900;
-  text-transform: uppercase;
+.meal-card__title-row {
+  align-items: flex-start;
 }
 
 .status-chip {
@@ -335,8 +364,8 @@ h1 {
   margin: 0;
   min-width: 0;
   color: #171410;
-  font-size: 1.3rem;
-  line-height: 1.18;
+  font-size: 1.34rem;
+  line-height: 1.16;
   letter-spacing: 0;
 }
 
@@ -346,18 +375,24 @@ h1 {
   color: #c58b22;
 }
 
-.meal-area {
+.meal-card__meta {
+  display: grid;
   gap: 7px;
-  margin: 0;
-  color: var(--green);
-  font-weight: 850;
 }
 
-.meal-note {
-  margin: 0;
-  color: #2c2721;
-  font-size: 1.02rem;
-  font-weight: 900;
+.meal-card__meta span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  gap: 7px;
+  color: var(--muted);
+  font-weight: 850;
+  line-height: 1.3;
+}
+
+.meal-card__meta span:first-child {
+  color: var(--green);
 }
 
 .meal-detail {
@@ -459,6 +494,23 @@ h1 {
 
   .meal-card {
     min-height: auto;
+  }
+
+  .meal-card__shell {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .meal-card__time {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    padding: 13px 16px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(104, 87, 65, 0.16);
+    text-align: left;
+  }
+
+  .meal-card__body {
     padding: 16px;
   }
 
@@ -637,12 +689,15 @@ h1 {
 
 .suggestion-option {
   display: grid;
-  gap: 7px;
-  min-height: 158px;
-  padding: 13px;
+  align-content: start;
+  gap: 9px;
+  min-height: 178px;
+  padding: 14px;
   border: 1px solid rgba(104, 87, 65, 0.18);
   border-radius: 8px;
-  background: rgba(255, 253, 248, 0.84);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 56%),
+    rgba(255, 253, 248, 0.84);
   color: var(--ink);
   text-decoration: none;
   transition:
@@ -693,21 +748,32 @@ h1 {
   gap: 6px;
 }
 
-.suggestion-option p,
-.suggestion-option em {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.38;
+.suggestion-facts {
+  display: grid;
+  gap: 7px;
+  padding-top: 2px;
 }
 
-.suggestion-option p:first-of-type {
+.suggestion-facts span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  gap: 6px;
+  color: var(--muted);
+  line-height: 1.36;
+}
+
+.suggestion-facts span:first-child {
   color: var(--green);
   font-weight: 900;
 }
 
 .suggestion-option em {
+  margin: 0;
   color: #4d463f;
   font-style: normal;
+  line-height: 1.38;
 }
 
 @media (max-width: 980px) {

@@ -203,40 +203,47 @@ export function App() {
               <div className="meal-grid">
                 {group.items.map((item) => (
                   <section className="meal-card" key={item.id}>
-                    <div className="meal-card__topline">
-                      <span className="meal-type">Primary {item.meal}</span>
-                      <span className={`status-chip ${statusTone[item.status]}`}>
-                        {item.status}
-                      </span>
-                    </div>
-                    <div className="meal-card__title-row">
-                      <h3>{item.restaurant}</h3>
-                      <div className="meal-card__badges">
-                        <span className="cuisine-chip">{item.cuisine}</span>
-                        {item.featured ? (
-                          <span className="featured" aria-label="Starred pick">
-                            <Star size={16} fill="currentColor" />
-                          </span>
-                        ) : null}
+                    <div className="meal-card__shell">
+                      <div className="meal-card__time">
+                        <span>{item.meal}</span>
+                        <small>Primary</small>
                       </div>
-                    </div>
-                    <p className="meal-area">
-                      <MapPin size={16} />
-                      {item.area}
-                    </p>
-                    <p className="meal-note">{item.note}</p>
-                    {item.detail ? <p className="meal-detail">{item.detail}</p> : null}
-                    <div className="link-row">
-                      {item.links.length > 0 ? (
-                        item.links.map((link) => (
-                          <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                            {link.label}
-                            <ExternalLink size={15} />
-                          </a>
-                        ))
-                      ) : (
-                        <span className="empty-link">No booking link</span>
-                      )}
+                      <div className="meal-card__body">
+                        <div className="meal-card__topline">
+                          <span className="cuisine-chip">{item.cuisine}</span>
+                          <span className={`status-chip ${statusTone[item.status]}`}>
+                            {item.status}
+                          </span>
+                        </div>
+                        <div className="meal-card__title-row">
+                          <h3>{item.restaurant}</h3>
+                          {item.featured ? (
+                            <span className="featured" aria-label="Starred pick">
+                              <Star size={16} fill="currentColor" />
+                            </span>
+                          ) : null}
+                        </div>
+                        <div className="meal-card__meta">
+                          <span>
+                            <MapPin size={16} />
+                            {item.area}
+                          </span>
+                          <span>{item.note}</span>
+                        </div>
+                        {item.detail ? <p className="meal-detail">{item.detail}</p> : null}
+                        <div className="link-row">
+                          {item.links.length > 0 ? (
+                            item.links.map((link) => (
+                              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                                {link.label}
+                                <ExternalLink size={15} />
+                              </a>
+                            ))
+                          ) : (
+                            <span className="empty-link">No booking link</span>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </section>
                 ))}
@@ -277,8 +284,13 @@ export function App() {
                               </span>
                               <span className="cuisine-chip">{option.cuisine}</span>
                             </div>
-                            <p>{option.area}</p>
-                            <p>{option.familyNote}</p>
+                            <div className="suggestion-facts">
+                              <span>
+                                <MapPin size={14} />
+                                {option.area}
+                              </span>
+                              <span>{option.familyNote}</span>
+                            </div>
                             <em>{option.reason}</em>
                           </a>
                         ))}
