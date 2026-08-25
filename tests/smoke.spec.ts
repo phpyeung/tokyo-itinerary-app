@@ -1,9 +1,23 @@
 import { test, expect } from '@playwright/test';
+import { restaurantSuggestionSets } from '../src/tripAdditions';
 
 const viewports = [
   { name: 'desktop', width: 1440, height: 1000 },
   { name: 'mobile', width: 390, height: 844 },
 ];
+
+test('each dinner has at least two Ginza-area backups', () => {
+  const ginzaArea = /ginza|yurakucho|shimbashi|shintomicho/i;
+  const dinnerSets = restaurantSuggestionSets.filter((set) => set.meal === 'Dinner');
+
+  for (const set of dinnerSets) {
+    const ginzaOptions = set.options.filter((option) => ginzaArea.test(option.area));
+    const cuisines = new Set(ginzaOptions.map((option) => option.cuisine));
+
+    expect(ginzaOptions.length, `${set.date} dinner Ginza-area option count`).toBeGreaterThanOrEqual(2);
+    expect(cuisines.size, `${set.date} dinner cuisine variety`).toBeGreaterThanOrEqual(2);
+  }
+});
 
 for (const viewport of viewports) {
   test(`renders itinerary on ${viewport.name}`, async ({ page }) => {
@@ -16,8 +30,8 @@ for (const viewport of viewports) {
     await expect(page.getByRole('heading', { name: 'Tokyo Itinerary' })).toBeVisible();
     await expect(page.locator('.meal-card')).toHaveCount(16);
     await expect(page.locator('.attraction-item')).toHaveCount(30);
-    await expect(page.locator('.suggestion-option')).toHaveCount(60);
-    await expect(page.locator('.cuisine-chip')).toHaveCount(76);
+    await expect(page.locator('.suggestion-option')).toHaveCount(74);
+    await expect(page.locator('.cuisine-chip')).toHaveCount(90);
 
     await expect(page.getByText('銀座 八五')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'YAKITORI Moe' })).toBeVisible();
@@ -40,6 +54,14 @@ for (const viewport of viewports) {
     await expect(page.locator('.suggestion-option').filter({ hasText: 'Sushi Umezawa' }).locator('.cuisine-chip').getByText('Sushi', { exact: true })).toBeVisible();
     await expect(page.getByText('Tsukiji Kaisen no Don')).toBeVisible();
     await expect(page.locator('.suggestion-option').filter({ hasText: 'Tsukiji Kaisen no Don' }).locator('.cuisine-chip').getByText('Kaisen don', { exact: true })).toBeVisible();
+    await expect(page.getByText('Yakitori Tsukiya', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Miyashin', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Ushigoro Ginza', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Ushigoro Bambina Ginza', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Ginza Sato Yosuke', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Rare Ten-don Ginza Mitsuyoshi Ginza honten', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Tempura Yama no Ue Ginza', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Kaiten Zushi Nemuro Hanamaru Ginza ten', { exact: true }).first()).toBeVisible();
     await expect(page.locator('.meal-card').filter({ hasText: 'cossott\'e SP' }).locator('.cuisine-chip').getByText('Yakiniku', { exact: true })).toBeVisible();
     await expect(page.locator('.meal-card').filter({ hasText: 'YAKITORI Moe' }).locator('.cuisine-chip').getByText('Yakitori', { exact: true })).toBeVisible();
     await expect(page.locator('.meal-card').filter({ hasText: '日本橋海鮮丼 つじ半 アークヒルズ店' }).locator('.cuisine-chip').getByText('Kaisen don', { exact: true })).toBeVisible();
@@ -67,7 +89,7 @@ for (const viewport of viewports) {
     expect(primaryLinks.every(Boolean)).toBeTruthy();
 
     const suggestionLinks = await page.locator('.suggestion-option').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
-    expect(suggestionLinks.length).toBe(60);
+    expect(suggestionLinks.length).toBe(74);
     expect(suggestionLinks.every(Boolean)).toBeTruthy();
 
     const attractionLinks = await page.locator('.attraction-item a').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
