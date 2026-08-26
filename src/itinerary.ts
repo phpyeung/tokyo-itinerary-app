@@ -95,11 +95,11 @@ export const itinerary: ItineraryItem[] = [
     area: "Azabu-juban",
     status: "Reserve",
     featured: true,
-    note: "Reserve",
-    detail: "Direct TableCheck booking available.",
+    note: "CONFIRMED - Booked on TableCheck",
+    detail: "Party of 4. Confirmed reservation via TableCheck (no confirmation code provided). Contact: 03-3551-8577, phpyeung@gmail.com, ヤング ポール.",
     links: [
       {
-        label: "Book on TableCheck",
+        label: "TableCheck",
         href: "https://www.tablecheck.com/en/cossotte-sp",
       },
       {
@@ -117,14 +117,14 @@ export const itinerary: ItineraryItem[] = [
     restaurant: "銀座 八五",
     cuisine: "Ramen",
     area: "Ginza",
-    status: "Reserve",
+    status: "Walk-in",
     featured: true,
-    note: "TableCheck only",
+    note: "NOT BOOKED - sold out; walk-in alternatives",
     detail:
-      "Reservations open Saturday 9:00 a.m. JST for the following Tue-Sun; ¥500/person reservation fee.",
+      "Aug 30 date was sold out. Restaurant does not accept elementary-age or younger children. Use walk-in backups instead. Reservations normally open Saturday 9:00 a.m. JST for the following Tue-Sun; ¥500/person reservation fee.",
     links: [
       {
-        label: "Book on TableCheck",
+        label: "TableCheck (sold out)",
         href: "https://www.tablecheck.com/ja/shops/ginza-hachigou/reserve",
       },
       {
@@ -139,17 +139,17 @@ export const itinerary: ItineraryItem[] = [
     weekday: "Sun",
     dayLabel: "Aug 30",
     meal: "Dinner",
-    restaurant: "寿司 鮪家（つなや）",
+    restaurant: "すし土風炉 銀座一丁目店",
     cuisine: "Sushi",
-    area: "Ebisu",
+    area: "Ginza-itchome",
     status: "Reserve",
     featured: true,
-    note: "Reserve on Tabelog",
-    detail: "Online booking is supported.",
+    note: "CONFIRMED T6359WNLW5",
+    detail: "18:00, party of 4. テーブル席個室/禁煙, seat-only (席のみ). Family-friendly: 子供可 (乳児・未就学児・小学生), お子様メニュー, ベビーカー可, 全席禁煙. No cancellation fee for seat-only; 2-hour stay. Contact: 03-3551-8577, phpyeung@gmail.com, ヤング ポール.",
     links: [
       {
         label: "Tabelog reservation",
-        href: "https://tabelog.com/tokyo/A1303/A130302/13197313/",
+        href: "https://tabelog.com/tokyo/A1301/A130101/13014902/",
       },
     ],
   },
@@ -164,8 +164,8 @@ export const itinerary: ItineraryItem[] = [
     area: "Toyosu / Market area",
     status: "Reserve",
     featured: true,
-    note: "Reserve on Tabelog",
-    detail: "Tabelog online reservations are supported; phone is also listed.",
+    note: "CONFIRMED CZ4S6XWNFJ",
+    detail: "14:00, party of 4. カウンター/禁煙. Course required: 「【14時限定・席数限定】板長おまかせ特別予約プラン◆選べる一杯付き」 ¥15,000/person. Same-day cancellation is 100% of course price. Contact: 03-3551-8577, phpyeung@gmail.com, ヤング ポール.",
     links: [
       {
         label: "Tabelog reservation",
@@ -209,12 +209,13 @@ export const itinerary: ItineraryItem[] = [
     cuisine: "Tonkatsu",
     area: "Ryogoku",
     status: "Reserve",
-    note: "Reserve dinner",
+    featured: true,
+    note: "CONFIRMED 2V898M79A2",
     detail:
-      "Dinner reservations are accepted; lunch reservations are not accepted. Calling may work if online is full.",
+      "18:00, party of 4. テーブル席/禁煙, seat-only (席のみ). Contact: 03-3551-8577, phpyeung@gmail.com, ヤング ポール.",
     links: [
       {
-        label: "Tabelog",
+        label: "Tabelog reservation",
         href: "https://tabelog.com/tokyo/A1312/A131201/13019126/",
       },
     ],
