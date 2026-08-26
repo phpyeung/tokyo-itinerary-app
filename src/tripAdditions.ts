@@ -142,6 +142,29 @@ const requestedGinzaPicks = [
   },
 ];
 
+const tsukijiMorningRamen = [
+  {
+    name: "鳥藤とりそばスタンド (Toritoh Torisoba Stand)",
+    cuisine: "Ramen / Torisoba",
+    area: "Tsukiji Market (築地魚河岸 3F)",
+    scoreLabel: "Family pick - Tabelog 3.47",
+    familyNote: "Children welcome (乳児・未就学・小学生); all non-smoking; food court seating (~100 seats); English menu available. むしどりそば (steamed chicken broth); 親子丼 option for kids.",
+    reason: "Family-friendly morning ramen before teamLab Planets. Friday 07:00–18:00. Walk-in. ~15–18 min walk from hotel, then transit to Toyosu for teamLab.",
+    href: "https://tabelog.com/tokyo/A1313/A131301/13202819/",
+    exception: true,
+  },
+  {
+    name: "牡蠣と貝 (Kaki to Kai)",
+    cuisine: "Ramen / Oyster",
+    area: "Tsukiji (near 築地本願寺)",
+    scoreLabel: "Closer option - Tabelog 3.69",
+    familyNote: "14 counter seats only; all non-smoking; cash only; ticket machine. Tight with stroller/infant; party of 4 can sit in a row. 濃厚牡蠣らぁ麺 (rich oyster); milder 貝出汁らぁ麺（塩）is kid-safer.",
+    reason: "Closer morning ramen (~7–10 min walk from hotel) before teamLab Planets. Open 06:00–05:00, walk-in only (no reservations).",
+    href: "https://tabelog.com/tokyo/A1313/A131301/13292429/",
+    exception: true,
+  },
+];
+
 const shintomichoNearHotel = [
   {
     name: "BROZERS' Shintomi chou ten",
@@ -475,7 +498,8 @@ export const attractionsByDate: Record<string, Attraction[]> = {
     { title: "Convenience store supply run", time: "Night", area: "Shintomicho", note: "Pick up water, breakfast snacks, and transit-card backup cash.", booking: "Flexible" },
   ],
   "2026-08-28": [
-    { title: "teamLab Planets", time: "Morning", area: "Toyosu", note: "Timed-ticket digital art museum; book in advance. Toyosu is near Tsukiji for grazing lunch.", href: "https://teamlabplanets.dmm.com/en", booking: "Book" },
+    { title: "Tsukiji morning ramen", time: "Early morning", area: "Tsukiji", note: "鳥藤とりそばスタンド (family-friendly, 07:00+, food court, English menu, ~15-18 min walk) or 牡蠣と貝 (closer, 06:00+, counter only, ~7-10 min walk). Both walk-in. See restaurant suggestions for details.", booking: "Flexible" },
+    { title: "teamLab Planets", time: "Morning", area: "Toyosu", note: "Timed-ticket digital art museum after ramen; book in advance. Toyosu is near Tsukiji.", href: "https://teamlabplanets.dmm.com/en", booking: "Book" },
     { title: "Tsukiji / Toyosu lunch area", time: "Midday", area: "Tsukiji / Toyosu", note: "Walk Tsukiji Outer Market for grilled seafood, tamagoyaki, and snacks after teamLab.", booking: "Flexible" },
     { title: "Hotel rest", time: "Afternoon", area: "Shintomicho", note: "Return to the apartment for a real jet-lag break after the morning.", booking: "Flexible" },
     { title: "Ginza sunset walk", time: "Evening", area: "Ginza", note: "Easy dusk stroll through Ginza before dinner at 麺 銀座おのでら in Higashi-ginza.", booking: "Flexible" },
@@ -523,7 +547,7 @@ export const attractionsByDate: Record<string, Attraction[]> = {
 export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-08-27", meal: "Lunch", context: "Unagi rice choices near Ginza after landing", options: ginzaUnagiRice },
   { date: "2026-08-27", meal: "Dinner", context: "Verified Ginza backups plus near-hotel Shintomicho arrival options and requested Onodera ramen", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], ginzaRamen[1], shintomichoNearHotel[0], requestedGinzaPicks[2]] },
-  { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Toyosu and Ginza after teamLab and market grazing, plus requested picks", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1], requestedGinzaPicks[0], requestedGinzaPicks[3]] },
+  { date: "2026-08-28", meal: "Lunch", context: "Morning ramen before teamLab Planets (walk-in, early start), plus sit-down backups around Tsukiji/Toyosu and Ginza after teamLab", options: [...tsukijiMorningRamen, ginzaPlus[1], ginzaRamen[0], ginzaRamen[1], requestedGinzaPicks[0], requestedGinzaPicks[3]] },
   { date: "2026-08-28", meal: "Dinner", context: "Ginza and near-hotel dinner backups after teamLab and Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], requestedGinzaPicks[1]] },
   { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro lunch backups near 鳥一筋 (13:00 confirmed)", options: ikebukuroLunch },
   { date: "2026-08-29", meal: "Dinner", context: "Casual Ikebukuro dinner options plus Ginza yakiniku and udon backups", options: [...ikebukuroDinner, ginzaDinnerVariety[2], ginzaDinnerVariety[4]] },
