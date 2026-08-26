@@ -29,9 +29,9 @@ for (const viewport of viewports) {
 
     await expect(page.getByRole('heading', { name: 'Tokyo Itinerary' })).toBeVisible();
     await expect(page.locator('.meal-card')).toHaveCount(16);
-    await expect(page.locator('.attraction-item')).toHaveCount(32);
-    await expect(page.locator('.suggestion-option')).toHaveCount(74);
-    await expect(page.locator('.cuisine-chip')).toHaveCount(90);
+    await expect(page.locator('.attraction-item')).toHaveCount(33);
+    await expect(page.locator('.suggestion-option')).toHaveCount(76);
+    await expect(page.locator('.cuisine-chip')).toHaveCount(92);
 
     await expect(page.getByRole('heading', { name: '銀座 八五' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'YAKITORI Moe' })).toBeVisible();
@@ -40,7 +40,7 @@ for (const viewport of viewports) {
 
     await expect(page.getByRole('heading', { name: 'Places to visit' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Restaurant backups' }).first()).toBeVisible();
-    await expect(page.getByText('teamLab Planets')).toBeVisible();
+    await expect(page.getByText('teamLab Planets').first()).toBeVisible();
     await expect(page.getByText('Sanrio Puroland')).toBeVisible();
     await expect(page.getByText('Doraemon Exhibition')).toBeVisible();
     await expect(page.getByText('Tokyo Skytree')).toBeVisible();
@@ -88,7 +88,7 @@ for (const viewport of viewports) {
     expect(primaryLinks.every(Boolean)).toBeTruthy();
 
     const suggestionLinks = await page.locator('.suggestion-option').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
-    expect(suggestionLinks.length).toBe(74);
+    expect(suggestionLinks.length).toBe(76);
     expect(suggestionLinks.every(Boolean)).toBeTruthy();
 
     const attractionLinks = await page.locator('.attraction-item a').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
