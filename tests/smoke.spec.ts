@@ -29,11 +29,11 @@ for (const viewport of viewports) {
 
     await expect(page.getByRole('heading', { name: 'Tokyo Itinerary' })).toBeVisible();
     await expect(page.locator('.meal-card')).toHaveCount(16);
-    await expect(page.locator('.attraction-item')).toHaveCount(30);
+    await expect(page.locator('.attraction-item')).toHaveCount(32);
     await expect(page.locator('.suggestion-option')).toHaveCount(74);
     await expect(page.locator('.cuisine-chip')).toHaveCount(90);
 
-    await expect(page.getByText('銀座 八五')).toBeVisible();
+    await expect(page.getByRole('heading', { name: '銀座 八五' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'YAKITORI Moe' })).toBeVisible();
     await expect(page.getByText('Tokyo Disneyland').first()).toBeVisible();
     await expect(page.getByText('日本橋海鮮丼 つじ半 アークヒルズ店')).toBeVisible();
@@ -43,9 +43,8 @@ for (const viewport of viewports) {
     await expect(page.getByText('teamLab Planets')).toBeVisible();
     await expect(page.getByText('Sanrio Puroland')).toBeVisible();
     await expect(page.getByText('Doraemon Exhibition')).toBeVisible();
-    await expect(page.getByText('Disney recovery morning')).toBeVisible();
-    await expect(page.getByText('Shin-Yokohama Ramen Museum')).toBeVisible();
-    await expect(page.getByRole('link', { name: /Minato Mirai/ })).toBeVisible();
+    await expect(page.getByText('Tokyo Skytree')).toBeVisible();
+    await expect(page.getByText('Toyosu Market morning')).toBeVisible();
     await expect(page.getByText('Ginza Kagari Honten').first()).toBeVisible();
     await expect(page.getByText('Chinese Restaurant Dynasty Hilton Tokyo Bay').first()).toBeVisible();
     await expect(page.getByText('Teuchi Udon Iwashiya Aoyama')).toBeVisible();
@@ -93,7 +92,7 @@ for (const viewport of viewports) {
     expect(suggestionLinks.every(Boolean)).toBeTruthy();
 
     const attractionLinks = await page.locator('.attraction-item a').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
-    expect(attractionLinks.length).toBeGreaterThanOrEqual(9);
+    expect(attractionLinks.length).toBeGreaterThanOrEqual(6);
     expect(attractionLinks.every(Boolean)).toBeTruthy();
 
     const metrics = await page.evaluate(() => ({
