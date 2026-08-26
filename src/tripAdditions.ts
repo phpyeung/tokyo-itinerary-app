@@ -525,7 +525,7 @@ export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-08-27", meal: "Dinner", context: "Verified Ginza backups plus near-hotel Shintomicho arrival options and requested Onodera ramen", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], ginzaRamen[1], shintomichoNearHotel[0], requestedGinzaPicks[2]] },
   { date: "2026-08-28", meal: "Lunch", context: "Sit-down backups around Tsukiji/Toyosu and Ginza after teamLab and market grazing, plus requested picks", options: [ginzaPlus[1], ginzaRamen[0], ginzaRamen[1], requestedGinzaPicks[0], requestedGinzaPicks[3]] },
   { date: "2026-08-28", meal: "Dinner", context: "Ginza and near-hotel dinner backups after teamLab and Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], requestedGinzaPicks[1]] },
-  { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro options near Sunshine City", options: ikebukuroLunch },
+  { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro lunch backups near 鳥一筋 (13:00 confirmed)", options: ikebukuroLunch },
   { date: "2026-08-29", meal: "Dinner", context: "Casual Ikebukuro dinner options plus Ginza yakiniku and udon backups", options: [...ikebukuroDinner, ginzaDinnerVariety[2], ginzaDinnerVariety[4]] },
   { date: "2026-08-30", meal: "Lunch", context: "Ginza area walk-in backups (銀座 八五 sold out)", options: nihonbashi },
   { date: "2026-08-30", meal: "Dinner", context: "Ginza-itchome dinner backups near すし土風炉 (18:00 confirmed)", options: [...nihonbashiDinner, ginzaDinnerVariety[0], ginzaDinnerVariety[7]] },

@@ -84,7 +84,7 @@ for (const viewport of viewports) {
     await expect(aug27.getByText('Tori to Shochu Yurikago')).toHaveCount(0);
 
     const primaryLinks = await page.locator('.link-row a').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
-    expect(primaryLinks.length).toBe(15);
+    expect(primaryLinks.length).toBe(16);
     expect(primaryLinks.every(Boolean)).toBeTruthy();
 
     const suggestionLinks = await page.locator('.suggestion-option').evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
