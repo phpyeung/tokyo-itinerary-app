@@ -177,6 +177,16 @@ const shintomichoNearHotel = [
   },
 ];
 
+const toyamaSushiGinza = {
+  name: "廻転とやま鮨 銀座",
+  cuisine: "Premium kaiten sushi (Toyama Bay)",
+  area: "Ginza 8 / Shimbashi",
+  scoreLabel: "Tabelog 3.49",
+  familyNote: "子供可 (乳児・未就学・小学生), ベビーカー可, 全席禁煙, English menu.",
+  reason: "Premium kaiten sushi backup on Aug 28 night with Toyama Bay seafood (中央区銀座8-2-16 FUNDES銀座 B1F); reservable or walk-in, Friday 17:00-21:00 (food L.O. 20:30). Official: https://toyamasushi-ginza.com/",
+  href: "https://tabelog.com/tokyo/A1301/A130103/13242663/",
+};
+
 const ginzaDinnerVariety = [
   {
     name: "Yakitori Tsukiya",
@@ -550,7 +560,7 @@ export const restaurantSuggestionSets: RestaurantSuggestionSet[] = [
   { date: "2026-08-27", meal: "Lunch", context: "Unagi rice choices near Ginza after landing", options: ginzaUnagiRice },
   { date: "2026-08-27", meal: "Dinner", context: "Verified Ginza backups plus near-hotel Shintomicho arrival options and requested Onodera ramen", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], ginzaRamen[1], shintomichoNearHotel[0], requestedGinzaPicks[2]] },
   { date: "2026-08-28", meal: "Lunch", context: "Morning ramen before teamLab Planets (walk-in, early start), plus sit-down backups around Tsukiji/Toyosu and Ginza after teamLab", options: [...tsukijiMorningRamen, ginzaPlus[1], ginzaRamen[0], ginzaRamen[1], requestedGinzaPicks[0], requestedGinzaPicks[3]] },
-  { date: "2026-08-28", meal: "Dinner", context: "Ginza and near-hotel dinner backups after teamLab and Tsukiji day", options: [ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], requestedGinzaPicks[1]] },
+  { date: "2026-08-28", meal: "Dinner", context: "Ginza and near-hotel dinner backups after teamLab and Tsukiji day", options: [toyamaSushiGinza, ginzaPlus[0], ginzaRamen[0], ginzaPlus[1], requestedGinzaPicks[1]] },
   { date: "2026-08-29", meal: "Lunch", context: "Ikebukuro lunch backups near 鳥一筋 (13:00 confirmed)", options: ikebukuroLunch },
   { date: "2026-08-29", meal: "Dinner", context: "Casual Ikebukuro dinner options plus Ginza yakiniku and udon backups", options: [...ikebukuroDinner, ginzaDinnerVariety[2], ginzaDinnerVariety[4]] },
   { date: "2026-08-30", meal: "Lunch", context: "Ginza area walk-in backups (銀座 八五 sold out)", options: nihonbashi },
