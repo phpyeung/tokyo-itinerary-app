@@ -298,7 +298,6 @@ h1 {
 }
 
 .meal-card {
-  min-height: 260px;
   overflow: hidden;
   border: 1px solid rgba(228, 223, 217, 0.5);
   background:
@@ -309,6 +308,10 @@ h1 {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.meal-card[data-expanded="true"] {
+  min-height: 260px;
+}
+
 .meal-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
@@ -316,9 +319,12 @@ h1 {
 }
 
 .meal-card__shell {
-  min-height: 260px;
   display: grid;
   grid-template-columns: 100px minmax(0, 1fr);
+}
+
+.meal-card[data-expanded="true"] .meal-card__shell {
+  min-height: 260px;
 }
 
 .meal-card__time {
@@ -355,6 +361,32 @@ h1 {
   flex-direction: column;
   gap: 14px;
   padding: 20px;
+}
+
+.expand-button {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: fit-content;
+  min-height: 38px;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  background: var(--paper-strong);
+  color: var(--ink-light);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.expand-button:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
+  background: var(--paper);
 }
 
 .meal-card__topline,
@@ -563,9 +595,17 @@ h1 {
     min-height: auto;
   }
 
+  .meal-card[data-expanded="true"] {
+    min-height: auto;
+  }
+
   .meal-card__shell {
     min-height: 0;
     grid-template-columns: 1fr;
+  }
+
+  .meal-card[data-expanded="true"] .meal-card__shell {
+    min-height: 0;
   }
 
   .meal-card__time {
@@ -774,7 +814,6 @@ h1 {
   display: grid;
   align-content: start;
   gap: 11px;
-  min-height: 190px;
   padding: 18px;
   border: 1px solid rgba(228, 223, 217, 0.4);
   border-radius: var(--radius-md);
@@ -787,13 +826,28 @@ h1 {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.suggestion-option[data-expanded="true"] {
+  min-height: 190px;
+}
+
 .suggestion-option:hover {
-  transform: translateY(-3px);
-  border-color: var(--line-strong);
   box-shadow: var(--shadow-md);
+  border-color: var(--line-strong);
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 244, 0.75) 100%),
     rgba(255, 253, 248, 0.85);
+}
+
+.suggestion-option__topline a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.suggestion-option__topline a:hover {
+  color: var(--red-light);
 }
 
 .suggestion-option__topline {
@@ -871,6 +925,10 @@ h1 {
 
   .attraction-item,
   .suggestion-option {
+    min-height: auto;
+  }
+
+  .suggestion-option[data-expanded="true"] {
     min-height: auto;
   }
 }
