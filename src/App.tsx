@@ -240,7 +240,7 @@ export function App() {
                         </div>
                         <div className="meal-card__body">
                           <div className="meal-card__topline">
-                            {isExpanded && <span className="cuisine-chip">{item.cuisine}</span>}
+                            <span className="cuisine-chip">{item.cuisine}</span>
                             <span className={`status-chip ${statusTone[item.status]}`}>
                               {item.status}
                             </span>
@@ -341,7 +341,7 @@ export function App() {
                                   {option.exception ? <Ticket size={13} /> : <Star size={13} fill="currentColor" />}
                                   {option.scoreLabel}
                                 </span>
-                                {isExpanded && <span className="cuisine-chip">{option.cuisine}</span>}
+                                <span className="cuisine-chip">{option.cuisine}</span>
                               </div>
                               <div className="suggestion-facts">
                                 <span>
