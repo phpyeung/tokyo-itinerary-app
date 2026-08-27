@@ -62,8 +62,8 @@ export const itinerary: ItineraryItem[] = [
     area: "Ginza",
     status: "Walk-in",
     featured: true,
-    note: "Family-friendly conveyor-belt sushi",
-    detail: "Children and strollers welcome; child chairs and child-friendly dishes listed. Premium-feeling conveyor-belt sushi in Ginza when you need flexibility over reservations.",
+    note: "Grab 整理券 / tickets before 6",
+    detail: "Friday night still queues; grab numbered tickets (整理券) before 6:00 p.m. to secure a spot. Family of 4. Children and strollers welcome; child chairs and child-friendly dishes. Store open through this trip (closes Sep 23).",
     links: [
       {
         label: "Tabelog",
