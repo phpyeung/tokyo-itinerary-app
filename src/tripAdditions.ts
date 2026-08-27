@@ -502,7 +502,9 @@ export const attractionsByDate: Record<string, Attraction[]> = {
     { title: "teamLab Planets", time: "Morning", area: "Toyosu", note: "Timed-ticket digital art museum after ramen; book in advance. Toyosu is near Tsukiji.", href: "https://teamlabplanets.dmm.com/en", booking: "Book" },
     { title: "Tsukiji / Toyosu lunch area", time: "Midday", area: "Tsukiji / Toyosu", note: "Walk Tsukiji Outer Market for grilled seafood, tamagoyaki, and snacks after teamLab.", booking: "Flexible" },
     { title: "Hotel rest", time: "Afternoon", area: "Shintomicho", note: "Return to the apartment for a real jet-lag break after the morning.", booking: "Flexible" },
-    { title: "Ginza sunset walk", time: "Evening", area: "Ginza", note: "Easy dusk stroll through Ginza before dinner at 麺 銀座おのでら in Higashi-ginza.", booking: "Flexible" },
+    { title: "Ginza sunset walk", time: "Evening", area: "Ginza", note: "Easy dusk stroll through Ginza before dinner.", booking: "Flexible" },
+    { title: "Premium conveyor-belt sushi dinner", time: "Night", area: "Ginza", note: "回転寿司 根室花まる 銀座店 — Primary dinner (see Meals). Family-friendly, walk-in.", booking: "Wait", href: "https://tabelog.com/en/tokyo/A1301/A130101/13193771/" },
+    { title: "麺 銀座おのでら 東銀座店", time: "Late / Walk-in option", area: "Higashi-ginza", note: "Ramen counter backup after sushi if still hungry. No reservations; counter and table seating, stroller parking outside.", booking: "Wait", href: "https://tabelog.com/tokyo/A1301/A130101/13315560/" },
   ],
   "2026-08-29": [
     { title: "Ikebukuro / Sunshine City", time: "Morning", area: "Ikebukuro", note: "Pokemon Center, shopping, or indoor activities; lunch nearby.", booking: "Flexible" },
